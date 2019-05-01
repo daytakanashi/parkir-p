@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/parkir','ParkirController@index');
+Route::get('/parkir/tambah','ParkirController@create');
+Route::get('/parkir/store','ParkirController@store');
+Route::get('/parkir/{id}/edit','ParkirController@edit');
+Route::post('/parkir/{id}/update','ParkirController@update');
+Route::get('/parkir/{id}/destroy','ParkirController@destroy');
