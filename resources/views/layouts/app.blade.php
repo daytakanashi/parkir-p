@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/parkir">Parkir</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/enter">Keluar-Masuk</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

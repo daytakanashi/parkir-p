@@ -44,6 +44,14 @@ class ParkirController extends Controller
         $parkir->jenisKendaraan = $request['jenisKendaraan'];
         $parkir->noPol = $request['noPol'];
         $parkir->save();
+
+        $enter= new \App\Enter;
+        $enter->nama = $request['nama'];
+        $enter->noPol = $request['noPol'];
+        $enter->tanggal = date('Y-m-d');
+        $enter->masuk = '0';
+        $enter->keluar = '0';
+        $enter->save();
         
         return redirect('/parkir');
     }
@@ -88,6 +96,9 @@ class ParkirController extends Controller
     public function destroy($id)
     {
         $parkir = parkir::find($id);
+        $parkir->delete($id);
+
+        $parkir = \App\Enter::find($id);
         $parkir->delete($id);
         return redirect()->back();
     }
