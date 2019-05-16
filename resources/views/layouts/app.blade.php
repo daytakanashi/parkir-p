@@ -39,6 +39,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/enter">Keluar-Masuk</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/enter">Laporan </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
