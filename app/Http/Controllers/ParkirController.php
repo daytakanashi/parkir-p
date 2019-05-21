@@ -53,6 +53,25 @@ class ParkirController extends Controller
         $enter->keluar = '0';
         $enter->save();
         
+        $jnsKndraan = $request['jenisKendaraan'];
+        if($jnsKndraan == "Mobil"){
+            $ongkos = "5000";
+        }else if($jnsKndraan == "Motor"){
+            $ongkos = "2000";
+        }else if($jnsKndraan == "Sepeda"){
+            $ongkos = "1000";
+        }
+
+        $laporan= new \App\Laporan;
+        $laporan->nama = $request['nama'];
+        $laporan->noPol = $request['noPol'];
+        $laporan->jenisKendaraan = $request['jenisKendaraan'];
+        $laporan->tanggal = date('Y-m-d');
+        $laporan->masuk = '0';
+        $laporan->keluar = '0';
+        $laporan->bayar = $ongkos;
+        $laporan->save();
+
         return redirect('/parkir');
     }
 
@@ -100,6 +119,10 @@ class ParkirController extends Controller
 
         $parkir = \App\Enter::find($id);
         $parkir->delete($id);
+        
+        $parkir = \App\Laporan::find($id);
+        $parkir->delete($id);
+
         return redirect()->back();
     }
 }

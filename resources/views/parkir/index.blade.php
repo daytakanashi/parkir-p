@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Dashboard
-                    <a type="button" class="float-right btn btn-outline-primary" href="/parkir/tambah">Tambah</a>
+                    <a type="button" class="btn btn-outline-primary float-right" href="/parkir/tambah">Tambah</a>
                 </div>
                 
 

@@ -75,6 +75,11 @@ class EnterController extends Controller
         ->first();
         $enter->masuk = date('H:i:s');
         $enter->update();
+
+        $laporan= \App\Laporan::where('id',$id)
+        ->first();
+        $laporan->masuk = date('H:i:s');
+        $laporan->update();
         
         return redirect('/enter');
     }
@@ -92,6 +97,11 @@ class EnterController extends Controller
         $enter->keluar = date('H:i:s');
         $enter->update();
         
+        $laporan= \App\Laporan::where('id',$id)
+        ->first();
+        $laporan->keluar = date('H:i:s');
+        $laporan->update();
+
         return redirect('/enter');
     }
 }

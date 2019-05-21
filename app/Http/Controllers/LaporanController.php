@@ -14,7 +14,9 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        //
+        $laporan=Laporan::paginate(10);
+
+        return view('laporan.index', ['laporans' => $laporan]);
     }
 
     /**

@@ -30,4 +30,4 @@ Route::get('/enter','EnterController@index');
 Route::get('/enter/{id}/masuk','EnterController@masuk');
 Route::get('/enter/{id}/keluar','EnterController@keluar');
 
-Route::get('/enter/{id}/keluar','EnterController@show');
+Route::get('/laporan','LaporanController@index');
